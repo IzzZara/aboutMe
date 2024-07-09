@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        table, td, th {
+            border: 1px solid;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: lightblue;
+        }
+        tr:nth-child(3) {
+            background-color:;
+        }
+    </style>
+    <script>
+        function semak() {
+            var name = document.borang.name.value;
+            var ic = document.borang.ic.value;
+            var username = document.borang.username.value;
+            var password = document.borang.password.value;
+
+            if (name == "") {
+                alert("Masukkan nama");
+                document.borang.name.focus();
+                return false;
+            } else if (!isNaN(name)) {
+                alert("Pastikan bukan angka untuk nama");
+                document.borang.name.focus();
+                return false;
+            } else if (ic == "") {
+                alert("Masukkan nombor IC");
+                document.borang.ic.focus();
+                return false;
+            } else if (isNaN(ic)) {
+                alert("Nombor IC mestilah angka sahaja");
+                document.borang.ic.focus();
+                return false;
+            } else if (username == "") {
+                alert("Masukkan username");
+                document.borang.username.focus();
+                return false;
+            } else if (password == "") {
+                alert("Masukkan password");
+                document.borang.password.focus();
+                return false;    
+            } else {
+                alert("Nama: " + name + "\nIC: " + ic + "\nUsername: " + username + "\nPassword: " + password);
+                return true; // Allow form submission
+            }
+        }
+
+        // Function to clear form fields
+        function clearForm() {
+            document.borang.reset();
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form name="borang" action="connect.php" method ="_POST">
+        <fieldset>
+            <legend>Enter your info in the form below</legend>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>IC Number</td>
+                    <td><input type="text" name="ic"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="Submit" value="Submit" onClick="return semak();">
+        <input type="reset" value="Clear Form" onclick="clearForm()">
+    </form>
+</body>
+</html>

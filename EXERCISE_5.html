@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table</title>
+    <style>
+        table, td, th {
+            border: 1px solid;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: lightblue;
+        }
+        tr:nth-child(3) {
+            background-color: grey;
+        }
+    </style>
+    <script>
+        function analyzeNumbers() {
+            var num1 = parseFloat(document.getElementById("num1").value); // Convert input to float
+            var num2 = parseFloat(document.getElementById("num2").value); // Convert input to float
+            
+            // Perform comparison
+             if (num1 > num2) {
+                window.alert(num1 + " is larger");
+            } else if (num1 < num2) {
+                window.alert(num2 + " is larger");
+            } else {
+                window.alert("Both numbers are equal.");
+            }
+        }
+    </script>
+</head>
+<body style="background-color: powderblue;">
+    <h2 style="background-color: white; text-align: center;">RIQQAH IZZ ZARA BINTI RAMLE 2022877958 4A</h2>
+    <div style="text-align: center;">
+        <a href="ONE.html">HOMEPAGE</a> | 
+        <a href="TWO.html">WORK</a> | 
+        <a href="THREE.html">MY FAVOURITE SONG</a> |
+        <a href="EXERCISE_1.html">EXERCISE 1</a> |
+        <a href="EXERCISE_2.html">EXERCISE 2</a> |
+        <a href="EXERCISE_3.html">EXERCISE 3</a> |
+        <a href="EXERCISE_4.html">EXERCISE 4</a> |
+        <a href="Week3Exercise.html">EXERCISE 5</a>
+        <a href="EXERCISE_5.html">EXERCISE 6</a>
+    </div>
+
+    <h1>LARGER</h1>
+
+            <th><label for="num1">num1 : </label></th>
+            <th><input type="text" id="num1" name="num1" required></th>
+
+        <br>
+            <th><label for="num2">num2 : </label></th>
+            <th><input type="text" id="num2" name="num2" required></th>
+        <br>
+        <br>
+            <tr style="background-color: lightblue;">
+            <td colspan="2" style="text-align:center;">
+                <input type="button" value="analyze" onclick="analyzeNumbers()">
+            </td>
+        </tr>
+</body>
+</html>
